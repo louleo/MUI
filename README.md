@@ -1,2 +1,2 @@
-# VDR
-Modern UI library for Vue.JS
+# MUI
+Modern UI libraries for general purpose.
