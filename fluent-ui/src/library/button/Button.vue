@@ -1,16 +1,20 @@
 <template>
-    <button></button>
+    <button @class=>
+
+    </button>
 </template>
 
 <script>
 export default {
   name: 'Button',
   props: {
-    type: String
+    type: String,
+    class: String,
+    text: String
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>
