@@ -1,5 +1,5 @@
 <template>
-    <button @class=>
+    <button :class="props.class">
 
     </button>
 </template>
