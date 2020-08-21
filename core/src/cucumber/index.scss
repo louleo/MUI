@@ -1,0 +1,7 @@
+$font-size-base: 1rem;
+$border-radius-base:  0px;
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import './scss/buttons';
+@import "./scss/links";
+@import "./scss/header";

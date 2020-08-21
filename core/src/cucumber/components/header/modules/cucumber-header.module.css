@@ -1,0 +1,7 @@
+.cucumber-nav-show{
+    transform: translateY(0px);
+}
+
+.cucumber-nav-hide{
+    transform: translateY(-100%);
+}

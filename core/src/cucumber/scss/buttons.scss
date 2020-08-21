@@ -1,0 +1,43 @@
+$cucumber-button-font-size:1.2rem !default;
+$cucumber-button-font-weight: 700 !default;
+$cucumber-button-padding-horizontal: 18px !default;
+$cucumber-button-padding-vertical: 22px !default;
+$cucumber-button-one-background-color: transparent !default;;
+
+
+
+.cucumber-button-one{
+  font-size: $cucumber-button-font-size;
+  outline: currentcolor none medium;
+  cursor: pointer;
+  overflow: hidden;
+  border: medium none;
+  background-color: $cucumber-button-one-background-color;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: $cucumber-button-font-weight;
+  padding: $cucumber-button-padding-vertical $cucumber-button-padding-horizontal;
+  line-height: 1;
+  position: relative;
+  transition: color 0.3s ease-in 0s;
+  z-index: 2;
+}
+
+.cucumber-button-one:hover::after, .cucumber-button-one:focus::after {
+  transform: translate3d(calc(-100% + 40px), 0px, 0px);
+}
+
+.cucumber-button-one::after {
+  z-index: -1;
+  position: absolute;
+  left: calc(100% - 40px);
+  bottom: 0px;
+  width: 110%;
+  height: 95%;
+  content: "";
+  transition: transform 0.3s cubic-bezier(0.44, 0.05, 0.21, 0.9) 0s, background-color 0.3s ease-in 0s;
+  transform-origin: 100% 50% 0px;
+  will-change: transform;
+  background-color: rgb(255, 255, 255);
+}
