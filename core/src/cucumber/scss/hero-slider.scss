@@ -9,3 +9,34 @@
   display: grid;
   grid-template-rows: [header] 40px [content] 1fr;
 }
+
+.cucumber-hero-slider-background{
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.cucumber-hero-slider-background:nth-child(1) {
+  transform: scaleX(0);
+  left: 0px;
+  width: 100%;
+  z-index: -1;
+  transform-origin: 0px 50%;
+}
+
+.cucumber-hero-slider-background:nth-child(2) {
+  left: 0px;
+  width: 100%;
+  z-index: -10;
+}
+
+.cucumber-hero-slider-background:nth-child(3) {
+  transform: scaleX(0);
+  left: unset;
+  right: 0px;
+  width: 100%;
+  z-index: -1;
+  transform-origin: 100% 50%;
+}

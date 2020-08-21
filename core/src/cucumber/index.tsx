@@ -6,6 +6,7 @@ import CucumberHeaderLinkContainer from "./components/header/CucumberHeaderLinkC
 import CucumberHeaderLink from "./components/header/CucumberHeaderLink";
 import CucumberHeaderButton from "./components/header/CucumberHeaderButton";
 import CucumberHeader from './components/header/CucumberHeader';
+import CucumberHeroSlider from "./components/hero-slider/CucumberHeroSlider";
 
 function CucumberApp() {
     return (
@@ -21,6 +22,7 @@ function CucumberApp() {
                 </CucumberHeaderLinkContainer>
                 <CucumberHeaderButton title={"Contact Us"} href={"/contact"}/>
             </CucumberHeader>
+            <CucumberHeroSlider></CucumberHeroSlider>
         </div>
     );
 }

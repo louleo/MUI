@@ -8,8 +8,6 @@ export default class CucumberHeader extends Component<any, any>{
         this.state = {
             navClass:"cucumber-nav-show"
         };
-        console.log(styles);
-
     }
 
     render(){
