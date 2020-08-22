@@ -13,8 +13,10 @@ class CucumberHeroSliderBackground extends Component<any,any> {
 
     componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any): void {
         if (prevProps.currentIndex !== this.props.currentIndex){
+            let time = 0;
             if (this.props.direction){
                 var intervalRight = setInterval(()=>{
+                        time += 0.002485;
                         if(this.state.rightTransform >= 1){
                             this.setState({
                                 rightTransform:0,
@@ -23,13 +25,14 @@ class CucumberHeroSliderBackground extends Component<any,any> {
                             clearInterval(intervalRight);
                         }else{
                             this.setState({
-                                rightTransform:this.state.rightTransform + 0.005
-                            })
+                                rightTransform:this.state.rightTransform + 0.01*(Math.pow(1-time, 3))
+                            });
                         }
                     }
                     ,1);
             }else{
                 var intervalLeft = setInterval(()=>{
+                        time += 0.002485;
                         if(this.state.leftTransform >=1){
                             this.setState({
                                 leftTransform:0,
@@ -38,8 +41,8 @@ class CucumberHeroSliderBackground extends Component<any,any> {
                             clearInterval(intervalLeft);
                         }else{
                             this.setState({
-                                leftTransform:this.state.leftTransform + 0.005
-                            })
+                                leftTransform:this.state.leftTransform + 0.01*(Math.pow(1-time, 3))
+                            });
                         }
                     }
                     ,1);
@@ -47,8 +50,8 @@ class CucumberHeroSliderBackground extends Component<any,any> {
 
         }
     }
-
-
+//
+//
     render() {
         return (
             <React.Fragment>
