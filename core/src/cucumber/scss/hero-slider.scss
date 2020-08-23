@@ -112,7 +112,7 @@ $cucumber-hero-slider-background-animation-function: cubic-bezier(0,.55,.51,.86)
   justify-content: center;
 }
 
-@include media-breakpoint-up(md){
+@include media-breakpoint-up(lg){
   .cucumber-hero-slider-button-wrapper{
     padding: 25px;
     visibility: visible;
@@ -120,7 +120,7 @@ $cucumber-hero-slider-background-animation-function: cubic-bezier(0,.55,.51,.86)
 }
 
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xl) {
   .cucumber-hero-slider-button-wrapper{
     top: 45%;
     padding: 12px;

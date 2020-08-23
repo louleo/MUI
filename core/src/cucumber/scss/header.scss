@@ -82,7 +82,21 @@ $cucumber-hero-header-nav-animation-function:linear !default;
   padding: 0px 5px 5px;
 }
 
-@include media-breakpoint-up(lg){
+.cucumber-header-nav-hamburger-btn{
+  padding-right: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  background: none;
+  margin: 0px;
+  z-index: 10001;
+}
+
+@include media-breakpoint-up(xl){
+  .cucumber-header-nav-hamburger-btn{
+    display: none;
+  }
   .cucumber-header {
     -moz-box-align: center;
     align-items: center;

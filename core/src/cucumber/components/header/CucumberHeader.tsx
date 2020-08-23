@@ -14,7 +14,7 @@ export default class CucumberHeader extends Component<any, any>{
         return(
             <nav className={"cucumber-header " + styles[this.state.navClass]}>
                 {this.props.children}
-                <button className={"cucumber-header-nav-hamburger-btn"} onClick={()=>this.props.mobileNavBtnClick()}>Open</button>
+                <button className={"cucumber-header-nav-hamburger-btn"} onClick={()=>this.props.mobileNavBtnClick()}>{this.props.mobileNavOpen?'close':'open'}</button>
             </nav>
         );
     }

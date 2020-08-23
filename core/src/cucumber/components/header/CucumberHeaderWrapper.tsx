@@ -31,7 +31,7 @@ class CucumberHeaderWrapper extends Component<any,any> {
 
     windowSizeMonitor(){
         const width = window.innerWidth;
-        if (width <= 1200){
+        if (width < 1200){
             this.setState({
                 mobileClass:'cucumber-header-nav-out-animated',
                 navOpen:false
@@ -54,7 +54,7 @@ class CucumberHeaderWrapper extends Component<any,any> {
 
     render() {
         return (
-            <CucumberHeader mobileNavBtnClick={()=>this.onMobileButtonClick()}>
+            <CucumberHeader mobileNavBtnClick={()=>this.onMobileButtonClick()} mobileNavOpen={this.state.navOpen}>
                 <CucumberHeaderLogo></CucumberHeaderLogo>
                 <CucumberHeaderLinkContainer mobileClass={this.state.mobileClass}>
                     <CucumberHeaderLink href={"/services"} title={"Services"} />
