@@ -7,7 +7,7 @@ class CucumberHeaderLinkContainer extends Component<any, any> {
 
     render() {
         return (
-            <div className={"cucumber-header-link-list-wrapper"}>
+            <div className={"cucumber-header-link-list-wrapper "+this.props.mobileClass}>
                 <ul className={"cucumber-header-link-list"}>
                     {this.props.children}
                 </ul>

@@ -1,32 +1,24 @@
 import React, {Component} from 'react';
 import CucumberHeroSliderBackground from "./CucumberHeroSliderBackground";
 import CucumberHeroSliderButton from "./CucumberHeroSliderButton";
+import CucumberHeroSliderContent from "./CucumberHeroSliderContent";
 
 class CucumberHeroSlider extends Component<any,any> {
-    private styles: {}[];
 
     constructor(props:any){
         super(props);
-        this.styles = [
-            {
-                background: "linear-gradient(36deg, rgb(238, 241, 253) 12%, rgb(240, 242, 254) 71%)"
-            },
-            {
-                background: "linear-gradient(36deg, rgb(45, 77, 185) 12%, rgb(112, 119, 255) 71%)"
-            },
-            {
-                background: "linear-gradient(36deg, rgb(209, 205, 199) 12%, rgb(237, 235, 232) 71%)"
-            },
-            {
-                background:"rgb(55, 100, 246)"
+        const sliders = props.contents;
+        if (sliders.length >=3 ){
+            this.state = {
+                current: 0,
+                leftStyle: sliders[sliders.length - 1].style,
+                rightStyle: sliders[1].style,
+                centerStyle: sliders[0].style,
+                direction:true,
+                show:true,
+                left:0,
+                right:0
             }
-        ];
-        this.state = {
-            current: 0,
-            leftStyle: this.styles[this.styles.length - 1],
-            rightStyle: this.styles[1],
-            centerStyle:this.styles[0],
-            direction:true
         }
     }
 
@@ -39,7 +31,24 @@ class CucumberHeroSlider extends Component<any,any> {
                     direction={this.state.direction}
                     currentIndex={this.state.current}
                 ></CucumberHeroSliderBackground>
-                <CucumberHeroSliderButton buttonLeftClick={()=>this.onLeftClick()} buttonRightClick={()=>this.onRightClick()}></CucumberHeroSliderButton>
+                <div className={'cucumber-hero-slider-contents-wrapper'}>
+                    {
+                            <CucumberHeroSliderContent
+                                show={this.state.show}
+                                contents={this.props.contents[this.state.current]}
+                            ></CucumberHeroSliderContent>
+                    }
+                </div>
+
+                <CucumberHeroSliderButton
+                    show={this.state.show}
+                    buttonLeftClick={()=>this.onLeftClick()}
+                    buttonRightClick={()=>this.onRightClick()}
+                    leftTitle={this.props.contents[this.state.left].button.title}
+                    rightTitle={this.props.contents[this.state.right].button.title}
+                    leftContent={this.props.contents[this.state.left].button.content}
+                    rightContent={this.props.contents[this.state.right].button.content}
+                ></CucumberHeroSliderButton>
             </div>
         );
     }
@@ -47,33 +56,41 @@ class CucumberHeroSlider extends Component<any,any> {
     onLeftClick(){
         let newCenter = this.state.current - 1;
         if (newCenter < 0){
-            newCenter = this.styles.length -1
+            newCenter = this.props.contents.length -1
         }
         let newLeft = newCenter - 1;
         if(newLeft < 0){
-            newLeft = this.styles.length - 1;
+            newLeft = this.props.contents.length - 1;
         }
         let newRight = this.state.current;
         this.updateSlider(newCenter,newLeft,newRight,false);
     }
 
     updateSlider(current:number,left:number,right:number,direction:boolean){
+        setTimeout(()=>{
+            this.setState({
+                show:true
+            });
+        },2000);
         this.setState({
             current:current,
-            leftStyle:this.styles[left],
-            rightStyle:this.styles[right],
-            centerStyle:this.styles[current],
-            direction:direction
+            show:false,
+            leftStyle:this.props.contents[left].style,
+            rightStyle:this.props.contents[right].style,
+            centerStyle:this.props.contents[current].style,
+            direction:direction,
+            left:left,
+            right:right
         })
     }
 
     onRightClick(){
         let newCenter = this.state.current + 1;
-        if (newCenter >= this.styles.length){
+        if (newCenter >= this.props.contents.length){
             newCenter = 0;
         }
         let newRight = newCenter + 1;
-        if(newRight >= this.styles.length){
+        if(newRight >= this.props.contents.length){
              newRight = 0;
         }
         let newLeft = this.state.current;

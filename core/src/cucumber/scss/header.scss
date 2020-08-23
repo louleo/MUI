@@ -1,3 +1,9 @@
+$cucumber-hero-header-nav-animation-duration: 1s !default;
+$cucumber-hero-header-nav-animation-function:linear !default;
+
+
+
+
 .cucumber-header{
   position: fixed;
   padding: 20px 26px;
@@ -8,7 +14,7 @@
   -moz-box-pack: justify;
   justify-content: space-between;
   margin: 0px;
-  z-index: 10000;
+  z-index: 10001;
   transition: all 0.5s ease 0s;
 }
 
@@ -16,7 +22,6 @@
   background-color: rgb(255, 255, 255);
   position: absolute;
   top: 0px;
-  left: 0px;
   margin: 0px;
   width: 100%;
   height: 564px;
@@ -29,7 +34,6 @@
   -moz-box-align: center;
   align-items: center;
   visibility: visible;
-  animation: 0.75s ease 0.3s 1 normal forwards running fGTZxa;
 }
 
 
@@ -45,8 +49,17 @@
   padding: 20px 0px 50px;
   list-style: outside none none;
   text-align: center;
-  transition: opacity 0.75s ease 0s;
   opacity: 0;
+}
+
+.cucumber-header-nav-in-animated .cucumber-header-link-list{
+  transition: opacity 0.75s ease 0.75s;
+  opacity: 1;
+}
+
+.cucumber-header-nav-out-animated .cucumber-header-link-list{
+  opacity: 0;
+  transition: opacity 0.5s ease 0s;
 }
 
 .cucumber-header-button-wrapper{
@@ -64,6 +77,10 @@
     transform: translateY(100%);
 }
 
+.cucumber-header-link-list-li-wrapper{
+  display: inline-block;
+  padding: 0px 5px 5px;
+}
 
 @include media-breakpoint-up(lg){
   .cucumber-header {
@@ -108,4 +125,33 @@
     position: absolute;
     right: 14px;
   }
+}
+
+
+
+@keyframes cucumber-header-nav-in-animation {
+  from {width: 0; height: 0}
+  to {width:100%; height:100vh}
+}
+
+@keyframes cucumber-header-nav-out-animation {
+  from {width: 100%;}
+  to {width:0;}
+}
+
+.cucumber-header-nav-in-animated{
+  left: 0px;
+  height: 100vh;
+  animation-name: cucumber-header-nav-in-animation;
+  animation-duration: $cucumber-hero-header-nav-animation-duration;
+  animation-timing-function: $cucumber-hero-header-nav-animation-function;
+}
+
+.cucumber-header-nav-out-animated{
+  right:0px;
+  width: 0;
+  height: 100vh;
+  animation-name: cucumber-header-nav-out-animation;
+  animation-duration: $cucumber-hero-header-nav-animation-duration;
+  animation-timing-function: $cucumber-hero-header-nav-animation-function;
 }

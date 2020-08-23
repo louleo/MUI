@@ -7,22 +7,74 @@ import CucumberHeaderLink from "./components/header/CucumberHeaderLink";
 import CucumberHeaderButton from "./components/header/CucumberHeaderButton";
 import CucumberHeader from './components/header/CucumberHeader';
 import CucumberHeroSlider from "./components/hero-slider/CucumberHeroSlider";
+import CucumberHeaderWrapper from "./components/header/CucumberHeaderWrapper";
 
 function CucumberApp() {
+    const sliders = [
+        {
+            style:{
+                background: "linear-gradient(36deg, rgb(238, 241, 253) 12%, rgb(240, 242, 254) 71%)"
+            },
+            title:'1 title',
+            content:'this is content',
+            button:{
+                title:'1 button title',
+                content:'this is button content'
+            }
+        },
+        {
+            style:{
+                background: "linear-gradient(36deg, rgb(45, 77, 185) 12%, rgb(112, 119, 255) 71%)"
+            },
+            title:'2 title',
+            content:'this is content',
+            button:{
+                title:'2 button title',
+                content:'this is button content'
+            }
+        },
+        {
+            style:{
+                background: "linear-gradient(36deg, rgb(209, 205, 199) 12%, rgb(237, 235, 232) 71%)"
+            },
+            title:'3 title',
+            content:'this is content',
+            button:{
+                title:'3 button title',
+                content:'this is button content'
+            }
+        },
+        {
+            style:{
+                background:"rgb(55, 100, 246)"
+            },
+            title:'4 title',
+            content:'this is content',
+            button:{
+                title:'4 button title',
+                content:'this is button content'
+            }
+        },
+        {
+            style:{
+                background:"rgb(20,246,28)"
+            },
+            title:'5 title',
+            content:'this is content',
+            button:{
+                title:'5 button title',
+                content:'this is button content'
+            }
+        }
+    ];
+
+
     return (
         <div className="">
-            <CucumberHeader>
-                <CucumberHeaderLogo></CucumberHeaderLogo>
-                <CucumberHeaderLinkContainer>
-                    <CucumberHeaderLink href={"/services"} title={"Services"} />
-                    <CucumberHeaderLink href={"/clients"} title={"Clients"} />
-                    <CucumberHeaderLink href={"/about"} title={"About"} />
-                    <CucumberHeaderLink href={"/resources"} title={"Resources"} />
-                    <CucumberHeaderLink href={"/blog"} title={"Blog"} />
-                </CucumberHeaderLinkContainer>
-                <CucumberHeaderButton title={"Contact Us"} href={"/contact"}/>
-            </CucumberHeader>
-            <CucumberHeroSlider></CucumberHeroSlider>
+            <CucumberHeaderWrapper></CucumberHeaderWrapper>
+            <CucumberHeroSlider
+                contents={sliders}
+            ></CucumberHeroSlider>
         </div>
     );
 }
