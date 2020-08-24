@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import CucumberHeroSliderBackground from "./CucumberHeroSliderBackground";
 import CucumberHeroSliderButton from "./CucumberHeroSliderButton";
 import CucumberHeroSliderContent from "./CucumberHeroSliderContent";
+import {Swipeable} from "react-swipeable";
+import CucumberHeroSliderDotWrapper from "./CucumberHeroSliderDotWrapper";
 
 class CucumberHeroSlider extends Component<any,any> {
 
@@ -31,15 +33,14 @@ class CucumberHeroSlider extends Component<any,any> {
                     direction={this.state.direction}
                     currentIndex={this.state.current}
                 ></CucumberHeroSliderBackground>
-                <div className={'cucumber-hero-slider-contents-wrapper'}>
-                    {
+                <Swipeable className={'cucumber-hero-slider-contents-wrapper'} onSwipedLeft={()=>this.onRightClick()} onSwipedRight={()=>this.onLeftClick()}>
+                        {
                             <CucumberHeroSliderContent
                                 show={this.state.show}
                                 contents={this.props.contents[this.state.current]}
                             ></CucumberHeroSliderContent>
-                    }
-                </div>
-
+                        }
+                </Swipeable>
                 <CucumberHeroSliderButton
                     show={this.state.show}
                     buttonLeftClick={()=>this.onLeftClick()}
@@ -49,6 +50,7 @@ class CucumberHeroSlider extends Component<any,any> {
                     leftContent={this.props.contents[this.state.left].button.content}
                     rightContent={this.props.contents[this.state.right].button.content}
                 ></CucumberHeroSliderButton>
+                <CucumberHeroSliderDotWrapper total={this.props.contents.length} current={this.state.current} onJumpClick={(to:number)=>this.jumpTo(to)}></CucumberHeroSliderDotWrapper>
             </div>
         );
     }
@@ -96,6 +98,24 @@ class CucumberHeroSlider extends Component<any,any> {
         let newLeft = this.state.current;
         this.updateSlider(newCenter,newLeft,newRight,true);
     }
+
+    jumpTo(to:number){
+        let from = this.state.current;
+        if (from == to){
+            return false;
+        }
+        let newCenter = to;
+        let newRight = newCenter + 1;
+        if(newRight >= this.props.contents.length){
+            newRight = 0;
+        }
+        let newLeft = newCenter - 1;
+        if(newLeft < 0){
+            newLeft = this.props.contents.length - 1;
+        }
+        this.updateSlider(newCenter,newLeft,newRight,from < to);
+    }
+
 }
 
 export default CucumberHeroSlider;

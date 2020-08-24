@@ -83,7 +83,7 @@ $cucumber-hero-header-nav-animation-function:linear !default;
 }
 
 .cucumber-header-nav-hamburger-btn{
-  padding-right: 0px;
+  padding: 0px;
   border-width: initial;
   border-style: none;
   border-color: initial;
@@ -91,6 +91,10 @@ $cucumber-hero-header-nav-animation-function:linear !default;
   background: none;
   margin: 0px;
   z-index: 10001;
+}
+
+.cucumber-header-nav-hamburger-btn-span{
+  font-size: 3rem;
 }
 
 @include media-breakpoint-up(xl){

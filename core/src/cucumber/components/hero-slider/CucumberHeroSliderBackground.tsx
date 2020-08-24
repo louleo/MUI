@@ -61,12 +61,12 @@ class CucumberHeroSliderBackground extends Component<any,any> {
         if (prevProps.currentIndex !== this.props.currentIndex){
             setTimeout(()=>{
                 this.setState({
-                    [this.state.direction?'rightClass':'leftClass']:'',
+                    [(this.props.direction?'rightClass':'leftClass')]:'',
                     centerStyle:this.props.centerStyle
                 });
             },2000);
             this.setState({
-                [this.state.direction?'rightClass':'leftClass']:'cucumber-hero-slider-background-animated'
+                [(this.props.direction?'rightClass':'leftClass')]:'cucumber-hero-slider-background-animated'
             });
         }
     }

@@ -8,6 +8,8 @@ import CucumberHeaderButton from "./components/header/CucumberHeaderButton";
 import CucumberHeader from './components/header/CucumberHeader';
 import CucumberHeroSlider from "./components/hero-slider/CucumberHeroSlider";
 import CucumberHeaderWrapper from "./components/header/CucumberHeaderWrapper";
+import CucumberFooter from "./components/footer/CucumberFooter";
+import CucumberFooterSocial from './components/footer/CucumberFooterSocial';
 
 function CucumberApp() {
     const sliders = [
@@ -68,6 +70,11 @@ function CucumberApp() {
         }
     ];
 
+    const socials = [
+        {name:'twitter',link:'https://www.google.com.au'},
+        {name:'facebook',link:'https://www.google.com.au'},
+        {name:'github',link:'https://www.google.com.au'}
+    ];
 
     return (
         <div className="">
@@ -75,6 +82,9 @@ function CucumberApp() {
             <CucumberHeroSlider
                 contents={sliders}
             ></CucumberHeroSlider>
+            <CucumberFooter>
+                <CucumberFooterSocial socials={socials}></CucumberFooterSocial>
+            </CucumberFooter>
         </div>
     );
 }
