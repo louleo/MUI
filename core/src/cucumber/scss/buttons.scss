@@ -28,6 +28,10 @@ $cucumber-button-one-background-color: transparent !default;;
   transform: translate3d(calc(-100% + 40px), 0px, 0px);
 }
 
+.cucumber-button-one:hover{
+  text-decoration: none;
+}
+
 .cucumber-button-one::after {
   z-index: -1;
   position: absolute;
@@ -39,5 +43,5 @@ $cucumber-button-one-background-color: transparent !default;;
   transition: transform 0.3s cubic-bezier(0.44, 0.05, 0.21, 0.9) 0s, background-color 0.3s ease-in 0s;
   transform-origin: 100% 50% 0px;
   will-change: transform;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(156, 216, 206, 0.67);
 }

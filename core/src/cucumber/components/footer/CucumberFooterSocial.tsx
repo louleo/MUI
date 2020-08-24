@@ -19,8 +19,8 @@ class CucumberFooterSocialElement extends Component<any, any>{
     render(){
         return(
             <div className={"cucumber-footer-social-element-wrapper"}>
-                <a href={this.props.link} title={this.props.name}>
-                    <span className={"material-icons"}>{this.props.name}</span>
+                <a href={this.props.link} title={this.props.name} className={'cucumber-footer-social-element-a'}>
+                    <i className={"fab fa-"+this.props.name+"-square cucumber-footer-social-element-i"}></i>
                 </a>
             </div>
         );

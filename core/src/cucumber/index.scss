@@ -1,9 +1,20 @@
 $font-size-base: 1rem;
 $border-radius-base:  0px;
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1600px
+);
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "~hamburgers/_sass/hamburgers/hamburgers";
 @import './scss/buttons';
 @import "./scss/links";
 @import "./scss/header";
 @import "./scss/hero-slider";
+@import "./scss/footer";

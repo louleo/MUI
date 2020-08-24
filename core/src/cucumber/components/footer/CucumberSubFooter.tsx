@@ -4,7 +4,7 @@ class CucumberSubFooter extends Component<any,any> {
     render() {
         return (
             <div>
-
+                {this.props.children}
             </div>
         );
     }

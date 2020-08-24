@@ -1,0 +1,39 @@
+.cucumber-footer-social-wrapper{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 50px;
+  border-top: 1px solid rgb(232, 232, 232);
+  padding: 55px 10%;
+}
+
+.cucumber-footer-social-element-a{
+  position: relative;
+  height: auto;
+  width: auto;
+  display: inline-block;
+  padding: 10px 10px 20px;
+  transition: transform 0.4s ease-out 0s;
+}
+
+.cucumber-footer-social-element-i{
+  font-size: 2rem;
+  color: black;
+}
+
+
+@include media-breakpoint-up(md){
+  .cucumber-footer-social-wrapper{
+    display: flex;
+  }
+  .cucumber-footer-social-element-a{
+    margin-right: 35px;
+  }
+}
+
+
+@include media-breakpoint-up(xl){
+  .cucumber-footer-social-wrapper{
+    padding: 55px 10% 55px 90px;
+  }
+}

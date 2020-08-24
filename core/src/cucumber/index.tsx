@@ -10,6 +10,7 @@ import CucumberHeroSlider from "./components/hero-slider/CucumberHeroSlider";
 import CucumberHeaderWrapper from "./components/header/CucumberHeaderWrapper";
 import CucumberFooter from "./components/footer/CucumberFooter";
 import CucumberFooterSocial from './components/footer/CucumberFooterSocial';
+import CucumberMainFooter from "./components/footer/CucumberMainFooter";
 
 function CucumberApp() {
     const sliders = [
@@ -83,6 +84,16 @@ function CucumberApp() {
                 contents={sliders}
             ></CucumberHeroSlider>
             <CucumberFooter>
+                <CucumberMainFooter>
+                    <div className={'row'}>
+                        <div className={'col-md-3'}>
+                            <a href="#" className={'cucumber-button-one d-block text-center'}>Contact Us</a>
+                        </div>
+                        <div className={'col-md-9'}>
+
+                        </div>
+                    </div>
+                </CucumberMainFooter>
                 <CucumberFooterSocial socials={socials}></CucumberFooterSocial>
             </CucumberFooter>
         </div>
